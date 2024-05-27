@@ -1,0 +1,53 @@
+const db = require("../confi/config"); 
+
+const VaultDweller = {}; 
+
+
+VaultDweller.create = (vault_dweller, result) => {
+    const sql = `INSERT INTO 
+    Vault_Dweller(
+        name,
+        gender,
+        life,
+        level,
+        strength,
+        perception,
+        endurance,
+        charisma,
+        intelligence,
+        agility,
+        luck
+    )
+    VALUES (?,?,?,?,?,?,?,?,?,?,?)
+    `;
+
+    db.query
+    (
+        sql,[vault_dweller.name,
+            vault_dweller.gender,
+            vault_dweller.life, 
+            vault_dweller.level,
+            vault_dweller.strength,
+            vault_dweller.perception,
+            vault_dweller.endurance,
+            vault_dweller.charisma,
+            vault_dweller.intelligence,
+            vault_dweller.agility,
+            vault_dweller.luck
+        
+        ], (err,res) =>
+            {
+                if (err)
+                    {
+                        console.log("Error al crear al merodeador:" , err); 
+                    } else 
+                    {
+                        console.log("id del nuevo merodeador", res.insertId); 
+                        result(null,rest.insertId);
+                    }
+            }
+    )
+    
+}
+
+module.exports = VaultDweller; 

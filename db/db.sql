@@ -1,0 +1,17 @@
+use fallout; 
+
+CREATE TABLE vault_dweller 
+(
+id  BIGINT PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR(180)NOT NULL,
+gender  VARCHAR(180)NOT NULL, 
+life VARCHAR(180)NOT NULL, 
+level VARCHAR(180)NOT NULL, 
+strength VARCHAR(90)NOT NULL, 
+perception VARCHAR(90)NOT NULL, 
+endurence VARCHAR(90)NOT NULL, 
+charisma VARCHAR(90)NOT NULL, 
+intelligence VARCHAR(90)NOT NULL,  
+Agility VARCHAR(90)NOT NULL, 
+Luck VARCHAR(90)NOT NULL
+);
